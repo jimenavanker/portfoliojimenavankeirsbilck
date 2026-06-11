@@ -117,6 +117,45 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .contact-link-label{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);}
 footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;}
 .footer-copy{font-size:12px;letter-spacing:0.1em;color:var(--ink3);}
+
+@media (max-width: 768px) {
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero{padding:4rem 1.5rem 3rem;}
+  .hero-title{font-size:clamp(42px,12vw,70px);}
+  .hero-bottom{grid-template-columns:1fr;}
+  .section{padding:3rem 1.5rem;}
+  .about-grid{grid-template-columns:1fr;gap:3rem;}
+  .method-grid{grid-template-columns:1fr 1fr;}
+  .method-item{border-right:none;border-bottom:0.5px solid var(--border);}
+  .method-item:last-child{border-bottom:none;}
+  .proj-row{grid-template-columns:40px 1fr 30px;gap:1rem;}
+  .proj-row-type{display:none;}
+  .case-header{padding:2rem 1.5rem;}
+  .case-body{padding:0 1.5rem 3rem;}
+  .case-cols{grid-template-columns:1fr;}
+  .case-cols-3{grid-template-columns:1fr;}
+  .case-meta{gap:1.5rem;}
+  .skills-grid{grid-template-columns:1fr;}
+  .contact-section{padding:3rem 1.5rem;}
+  footer{padding:1.5rem;flex-direction:column;gap:0.5rem;}
+  .tl-item{grid-template-columns:70px 1fr;gap:1rem;}
+  .case-featured .proj-grid-inner{grid-template-columns:1fr;}
+}
+
+@media (max-width: 480px) {
+  .method-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:clamp(36px,10vw,56px);}
+  .about-hl{font-size:28px;}
+  .contact-hl{font-size:36px;}
+}
+
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
+.media-grid img{width:100%;display:block;border:0.5px solid var(--border);}
+.media-full{width:100%;margin-top:1rem;}
+.media-full video{width:100%;display:block;border:0.5px solid var(--border);background:#000;}
+.media-full img{width:100%;display:block;border:0.5px solid var(--border);}
+@media(max-width:768px){.media-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -340,19 +379,11 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
       </div>
     </div>
     <div class="case-body">
-      <div class="confidential-banner">
-        <strong>Proyecto bajo confidencialidad.</strong> Puedo compartir el proceso completo, los entregables y los hallazgos en una entrevista.
-        <div style="margin-top:1.25rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-          <a href="mailto:jimenavanker@gmail.com?subject=Solicitud%20de%20acceso%20%E2%80%94%20Caso%20Vozon&body=Hola%20Jimena%2C%0A%0AMe%20interesa%20conocer%20el%20caso%20de%20estudio%20completo%20de%20Vozon.%0A%0AMi%20nombre%20es%3A%20%0AEmpresa%20%2F%20contexto%3A%20%0AMotivo%3A%20%0A%0AGracias." style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:10px 20px;border:0.5px solid rgba(255,255,255,0.4);transition:all 0.2s;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Solicitar acceso ↗</a>
-          <div style="display:flex;gap:8px;align-items:center;">
-            <input id="vozon-pwd" type="password" placeholder="Contraseña" style="font-family:'DM Mono',monospace;font-size:12px;padding:10px 14px;background:transparent;border:0.5px solid rgba(255,255,255,0.3);color:#fff;outline:none;width:160px;" onkeydown="if(event.key==='Enter')checkVozon()"/>
-            <button onclick="checkVozon()" style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:10px 16px;background:transparent;border:0.5px solid rgba(255,255,255,0.4);color:#fff;cursor:pointer;">Ver</button>
-          </div>
-          <span id="vozon-error" style="font-size:11px;color:rgba(255,100,100,0.8);display:none;">Contraseña incorrecta</span>
+      <span id="vozon-error" style="font-size:11px;color:rgba(255,100,100,0.8);display:none;">Contraseña incorrecta</span>
         </div>
       </div>
 
-      <div id="vozon-content" style="display:none;"><div class="case-section">
+      <div id="vozon-content"><div class="case-section">
         <div class="case-section-label">El desafío</div>
         <div class="case-section-title">Al buscar una propiedad, el usuario solo tiene<br><em>la versión del vendedor.</em></div>
         <div class="case-text">
@@ -470,6 +501,30 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
         </div>
       </div>
 
+
+      <div class="case-section">
+        <div class="case-section-label">Vistas del producto</div>
+        <div class="media-full">
+          <img src="trei_mockup.png" alt="TREI mockup">
+        </div>
+        <div class="media-full" style="margin-top:1.5rem;">
+          <video controls playsinline muted>
+            <source src="trei_navegacion.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <div class="case-section-label">Vistas del producto</div>
+        <div style="background:#000;padding:2rem;margin-top:1rem;">
+          <img src="trei_mockup.png" alt="TREI mockup" style="width:100%;display:block;max-width:600px;margin:0 auto;">
+        </div>
+        <div class="media-full" style="margin-top:1.5rem;">
+          <video controls playsinline muted style="width:100%;display:block;background:#000;">
+            <source src="trei_navegacion.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <div class="case-section" style="border-bottom:none;">
         <a class="case-link-out" href="https://www.behance.net/gallery/222264383/TREI-Mobile-App-UXUI-Design" target="_blank">Ver caso completo en Behance ↗</a>
       </div>
@@ -530,6 +585,30 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
         </ul>
       </div>
 
+
+      <div class="case-section">
+        <div class="case-section-label">Vistas del producto</div>
+        <div class="media-full">
+          <img src="cuido_mockup.png" alt="CÜIDO mockup">
+        </div>
+        <div class="media-full" style="margin-top:1.5rem;">
+          <video controls playsinline muted>
+            <source src="cuido_navegacion_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <div class="case-section-label">Vistas del producto</div>
+        <div class="media-full">
+          <img src="cuido_mockup2.jpg" alt="CÜIDO mockup" style="width:100%;display:block;">
+        </div>
+        <div class="media-full" style="margin-top:1.5rem;">
+          <video controls playsinline muted style="width:100%;display:block;">
+            <source src="cuido_navegacion_compressed.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <div class="case-section" style="border-bottom:none;">
         <a class="case-link-out" href="https://www.behance.net/gallery/213969635/CUEIDO-Aplicacion-Diseno-UXUI-Coderhouse" target="_blank">Ver caso completo en Behance ↗</a>
       </div>
@@ -569,6 +648,18 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
         </div>
       </div>
 
+
+      <div class="case-section">
+        <div class="case-section-label">El producto</div>
+        <div class="media-grid" style="grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
+          <img src="imo_chilca1.jpg" alt="Chilca packaging" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+          <img src="imo_chilca2.jpg" alt="Chilca packaging detalle" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+          <img src="imo_latas1.jpg" alt="Pack latas vista superior" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+          <img src="imo_latas2.jpg" alt="Pack latas detalle" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+          <img src="imo_botellas1.jpg" alt="Pack botellas" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+          <img src="imo_botellas2.jpg" alt="Pack botellas abierto" style="width:100%;display:block;object-fit:cover;aspect-ratio:1;">
+        </div>
+      </div>
       <div class="case-section" style="border-bottom:none;">
         <div class="case-cols">
           <div class="case-box-dark">
@@ -603,15 +694,6 @@ function showCase(id){
 }
 function goTo(id){
   setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});},100);
-}
-function checkVozon(){
-  const pwd = document.getElementById('vozon-pwd').value;
-  if(pwd === 'vozon9*'){
-    document.getElementById('vozon-content').style.display='block';
-    document.getElementById('vozon-error').style.display='none';
-  } else {
-    document.getElementById('vozon-error').style.display='inline';
-  }
 }
 </script>
 </div></body>
