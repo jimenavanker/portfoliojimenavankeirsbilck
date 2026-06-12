@@ -10,11 +10,11 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Mono',monospace;background:var(--bg);color:var(--ink);overflow-x:hidden;}
-.page-wrap{max-width:1200px;margin:0 auto;box-shadow:0 0 80px rgba(0,0,0,0.07);background:var(--bg);min-height:100vh;}
 a{color:inherit;text-decoration:none;}
+.page-wrap{max-width:1200px;margin:0 auto;box-shadow:0 0 80px rgba(0,0,0,0.07);background:var(--bg);min-height:100vh;}
 
 nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;background:var(--bg);border-bottom:0.5px solid var(--border);}
-.nav-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;letter-spacing:0.04em;}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:300;letter-spacing:0.04em;cursor:pointer;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink2);cursor:pointer;transition:color 0.2s;}
 .nav-links a:hover{color:var(--ink);}
@@ -38,7 +38,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .about-body p+p{margin-top:1.25rem;}
 .about-body strong{color:var(--ink);font-weight:400;}
 .tl-item{display:grid;grid-template-columns:90px 1fr;gap:2rem;padding:1.6rem 0;border-top:0.5px solid var(--border);}
-.tl-year{font-size:10px;color:var(--ink3);padding-top:2px;line-height:1.6;}
+.tl-year{font-size:13px;color:var(--ink3);padding-top:2px;line-height:1.6;}
 .tl-role{font-size:15px;margin-bottom:2px;}
 .tl-org{font-size:13px;color:var(--ink2);margin-bottom:7px;letter-spacing:0.05em;}
 .tl-desc{font-size:13px;color:var(--ink2);line-height:1.8;}
@@ -56,17 +56,19 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .proj-index{border-top:0.5px solid var(--border);}
 .proj-row{display:grid;grid-template-columns:60px 1fr 200px 40px;gap:2rem;align-items:center;padding:1.75rem 0.5rem;border-bottom:0.5px solid var(--border);cursor:pointer;transition:background 0.15s;}
 .proj-row:hover{background:var(--bg2);}
-.proj-row-num{font-size:11px;color:var(--ink3);letter-spacing:0.08em;}
+.proj-row-num{font-size:13px;color:var(--ink3);letter-spacing:0.08em;}
 .proj-row-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;}
 .proj-row-type{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);}
 .proj-row-arrow{font-size:14px;color:var(--ink3);text-align:right;transition:transform 0.2s;}
 .proj-row:hover .proj-row-arrow{transform:translate(3px,-3px);color:var(--ink);}
 
-.case-pages{display:none;}
+/* CASE STUDIES */
+#case-pages{display:none;}
 .case-page{display:none;}
 .case-page.active{display:block;}
+
 .case-header{padding:4rem 3rem 3rem;border-bottom:0.5px solid var(--border);}
-.case-back{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:3rem;transition:color 0.2s;}
+.case-back{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:3rem;transition:color 0.2s;}
 .case-back:hover{color:var(--ink);}
 .case-eyebrow{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;}
 .case-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;margin-bottom:1rem;}
@@ -109,21 +111,17 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .sg-list li:last-child{border-bottom:none;}
 
 .contact-section{padding:6rem 3rem;}
-
-.contact-hl{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1.0;}
-.contact-hl em{font-style:italic;}
 .contact-links{display:flex;flex-direction:column;}
 .contact-link{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;border-bottom:0.5px solid var(--border);font-size:14px;transition:color 0.18s;}
 .contact-link-label{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);}
 footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;}
 .footer-copy{font-size:12px;letter-spacing:0.1em;color:var(--ink3);}
 
-@media (max-width: 768px) {
+@media(max-width:768px){
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
   .hero{padding:4rem 1.5rem 3rem;}
   .hero-title{font-size:clamp(42px,12vw,70px);}
-  .hero-bottom{grid-template-columns:1fr;}
   .section{padding:3rem 1.5rem;}
   .about-grid{grid-template-columns:1fr;gap:3rem;}
   .method-grid{grid-template-columns:1fr 1fr;}
@@ -140,28 +138,19 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
   .contact-section{padding:3rem 1.5rem;}
   footer{padding:1.5rem;flex-direction:column;gap:0.5rem;}
   .tl-item{grid-template-columns:70px 1fr;gap:1rem;}
-  .case-featured .proj-grid-inner{grid-template-columns:1fr;}
 }
-
-@media (max-width: 480px) {
+@media(max-width:480px){
   .method-grid{grid-template-columns:1fr;}
   .hero-title{font-size:clamp(36px,10vw,56px);}
   .about-hl{font-size:28px;}
-  .contact-hl{font-size:36px;}
 }
-
-.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
-.media-grid img{width:100%;display:block;border:0.5px solid var(--border);}
-.media-full{width:100%;margin-top:1rem;}
-.media-full video{width:100%;display:block;border:0.5px solid var(--border);background:#000;}
-.media-full img{width:100%;display:block;border:0.5px solid var(--border);}
-@media(max-width:768px){.media-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
+<div class="page-wrap">
 
-<div class="page-wrap"><nav>
-  <div class="nav-name" style="cursor:pointer" onclick="showHome()">Jimena Vankeirsbilck</div>
+<nav>
+  <div class="nav-name" onclick="showHome()">Jimena Vankeirsbilck</div>
   <ul class="nav-links">
     <li><a onclick="showHome();goTo('sobre')">Sobre mí</a></li>
     <li><a onclick="showHome();goTo('proyectos')">Proyectos</a></li>
@@ -170,6 +159,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
   </ul>
 </nav>
 
+<!-- HOME -->
 <div id="home-view">
 
 <section class="hero">
@@ -177,7 +167,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
   <div class="hero-title">Diseño<br><em>productos.</em></div>
   <div class="hero-subtitle">Product Designer | UX Strategy, Ecosystems &amp; Growth</div>
   <div class="hero-statement">
-    Diseño productos digitales interactivos uniendo la lógica de negocio, ejecución tecnológica con IA.<br><br>
+    Diseño productos digitales interactivos uniendo la lógica de negocio y ejecución tecnológica con IA.<br><br>
     <strong>Diseñadora de producto con base en el diseño industrial.</strong> Como Diseñadora Industrial me amplié en Argentina, alcanzando ventas en todo el país. UX/UI me dio las herramientas para ir más lejos, expandirme más allá de las fronteras de mi país.
   </div>
 </section>
@@ -268,7 +258,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
         <div class="proj-row-title">Vozon</div>
         <div class="proj-row-type">Product Design · UX Research · Estrategia de producto</div>
       </div>
-      <div class="proj-row-type" style="text-align:right;">Proyecto privado</div>
+      <div class="proj-row-type" style="text-align:right;">2025</div>
       <div class="proj-row-arrow">↗</div>
     </div>
     <div class="proj-row" onclick="showCase('trei')">
@@ -362,7 +352,8 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
 
 </div><!-- end home-view -->
 
-<div class="case-pages" id="case-pages">
+<!-- CASE STUDIES -->
+<div id="case-pages">
 
   <!-- VOZON -->
   <div class="case-page" id="case-vozon">
@@ -379,11 +370,13 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
       </div>
     </div>
     <div class="case-body">
-      <span id="vozon-error" style="font-size:11px;color:rgba(255,100,100,0.8);display:none;">Contraseña incorrecta</span>
+      <div class="confidential-banner">
+        <strong>Proyecto bajo confidencialidad.</strong> Puedo compartir el proceso completo, los entregables y los hallazgos en una entrevista.
+        <div style="margin-top:1.25rem;">
+          <a href="mailto:jimenavanker@gmail.com?subject=Solicitud%20de%20acceso%20%E2%80%94%20Caso%20Vozon&body=Hola%20Jimena%2C%0A%0AMe%20interesa%20conocer%20el%20caso%20de%20estudio%20completo%20de%20Vozon.%0A%0AMi%20nombre%20es%3A%20%0AEmpresa%20%2F%20contexto%3A%20%0AMotivo%3A%20%0A%0AGracias." style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;padding:10px 20px;border:0.5px solid rgba(255,255,255,0.4);text-decoration:none;">Solicitar acceso ↗</a>
         </div>
       </div>
-
-      <div id="vozon-content"><div class="case-section">
+      <div class="case-section">
         <div class="case-section-label">El desafío</div>
         <div class="case-section-title">Al buscar una propiedad, el usuario solo tiene<br><em>la versión del vendedor.</em></div>
         <div class="case-text">
@@ -391,7 +384,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <p>El objetivo fue diseñar una Web-App que rompa esa asimetría — permitiendo buscar propiedades y compartir reseñas honestas basadas en experiencias reales de vivienda.</p>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">Estrategia de adopción · Growth Loop</div>
         <div class="case-section-title">El problema del contenido vacío<br><em>resuelto desde adentro.</em></div>
@@ -406,7 +398,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           </div>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">De Figma a código · Flujo AI-Assisted</div>
         <div class="case-section-title">Validar en un entorno real,<br><em>no en un prototipo.</em></div>
@@ -415,7 +406,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <p>Esto garantizó que la arquitectura de información y la lógica de negocio se testearan en un entorno de desarrollo real antes del despliegue.</p>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">Entregables</div>
         <div class="case-cols-3">
@@ -424,7 +414,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <div class="case-box"><div class="case-box-label">Validación</div><div class="case-box-text">Pruebas de usabilidad · Métricas con Amplitude y MS Clarity · Web-App funcional en Lovable + Supabase</div></div>
         </div>
       </div>
-    </div></div><!-- end vozon-content -->
+    </div>
   </div>
 
   <!-- TREI -->
@@ -437,7 +427,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
       <div class="case-meta">
         <div><div class="case-meta-label">Año</div><div class="case-meta-val">2025</div></div>
         <div><div class="case-meta-label">Duración</div><div class="case-meta-val">6 semanas · Simulación laboral</div></div>
-        <div><div class="case-meta-label">Rol</div><div class="case-meta-val">Product Designer · UX Research · UI · Prototipado · Colaboración cross-functional</div></div>
+        <div><div class="case-meta-label">Rol</div><div class="case-meta-val">Product Designer · UX Research · UI · Prototipado</div></div>
         <div><div class="case-meta-label">Metodología</div><div class="case-meta-val">Design Thinking</div></div>
       </div>
     </div>
@@ -456,33 +446,30 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           </div>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">UX Research · Hallazgos</div>
         <div class="case-text">
           <p>A través de encuestas específicas a músicos en Latinoamérica, investigamos sus rutinas de práctica, hábitos en redes sociales y cómo capturan sus ideas durante el proceso creativo. Los hallazgos dieron forma al mapa de empatía y definieron la voz y el tono de la plataforma.</p>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">La propuesta · MVP</div>
         <div class="case-section-title">Una red social para músicos emergentes<br><em>con registro creativo integrado.</em></div>
         <div class="case-cols-3">
-          <div class="case-box">
-            <div class="case-box-label">Perfil profesional activo</div>
-            <div class="case-box-text">Espacio para mostrar datos, redes, portafolio musical y contacto directo para contrataciones — como cantante, instrumentista, DJ o productor.</div>
-          </div>
-          <div class="case-box">
-            <div class="case-box-label">Diario de registro creativo</div>
-            <div class="case-box-text">Bloc integrado para escribir, grabar audios e ideas al instante. Las ideas pueden retomarse después o publicarse directamente al feed. La clave del engagement diario.</div>
-          </div>
-          <div class="case-box">
-            <div class="case-box-label">Feed interactivo</div>
-            <div class="case-box-text">Muro multimedia para escuchar, ver e interactuar con el trabajo de otros músicos — presentaciones, anuncios y colaboraciones en un solo lugar.</div>
-          </div>
+          <div class="case-box"><div class="case-box-label">Perfil profesional activo</div><div class="case-box-text">Espacio para mostrar datos, redes, portafolio musical y contacto directo para contrataciones.</div></div>
+          <div class="case-box"><div class="case-box-label">Diario de registro creativo</div><div class="case-box-text">Bloc integrado para escribir, grabar audios e ideas al instante. La clave del engagement diario.</div></div>
+          <div class="case-box"><div class="case-box-label">Feed interactivo</div><div class="case-box-text">Muro multimedia para escuchar, ver e interactuar con el trabajo de otros músicos.</div></div>
         </div>
       </div>
-
+      <div class="case-section">
+        <div class="case-section-label">Vistas del producto</div>
+        <div style="display:grid;grid-template-columns:280px 280px;gap:2rem;align-items:stretch;margin-top:1rem;">
+          <img src="trei_mockup.png" alt="TREI mockup" style="width:280px;height:280px;object-fit:cover;display:block;background:#000;">
+          <video controls playsinline muted style="width:280px;height:280px;display:block;border:0.5px solid var(--border);object-fit:cover;">
+            <source src="trei_navegacion.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <div class="case-section">
         <div class="case-section-label">Mi rol</div>
         <div class="case-cols">
@@ -500,20 +487,7 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           </div>
         </div>
       </div>
-
-
-      
-
       <div class="case-section">
-        <div class="case-section-label">Vistas del producto</div>
-        <div style="display:grid;grid-template-columns:280px 280px;gap:2rem;align-items:stretch;margin-top:1rem;">
-          <img src="trei_mockup.png" alt="TREI mockup" style="width:280px;height:280px;object-fit:cover;display:block;background:#000;">
-          <video controls playsinline muted style="width:280px;height:280px;display:block;border:0.5px solid var(--border);object-fit:cover;">
-            <source src="trei_navegacion.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="case-section" style="border-bottom:none;">
         <a class="case-link-out" href="https://www.behance.net/gallery/222264383/TREI-Mobile-App-UXUI-Design" target="_blank">Ver caso completo en Behance ↗</a>
       </div>
     </div>
@@ -542,7 +516,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <p>Este problema se intensifica en personas que viajan por trabajo y en quienes llevan el control de salud de sus hijos.</p>
         </div>
       </div>
-
       <div class="case-section">
         <div class="case-section-label">La solución</div>
         <div class="case-section-title">Una app donde el paciente centraliza,<br><em>transporta y comparte</em> su historia clínica.</div>
@@ -551,32 +524,11 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
             <p>CÜIDO le permite al paciente reunir en un solo lugar los datos de distintos profesionales, centros de salud, especialidades y ubicaciones geográficas. La información puede compartirse con cualquier profesional de la salud, con las medidas de seguridad necesarias para proteger los datos.</p>
           </div>
           <div>
-            <div class="case-box" style="margin-bottom:1rem;">
-              <div class="case-box-label">Objetivos del producto</div>
-              <div class="case-box-text">Habilitar el acceso del paciente a su historia clínica · Facilitar el traslado · Reducir el uso de papel · Registrar la evolución en salud · Optimizar el tiempo de consulta · Habilitar diagnósticos integrales</div>
-            </div>
-            <div class="case-box">
-              <div class="case-box-label">Usuarios</div>
-              <div class="case-box-text">Paciente — acceso y gestión de su historia clínica · Profesional de la salud — acceso con permisos del paciente</div>
-            </div>
+            <div class="case-box" style="margin-bottom:1rem;"><div class="case-box-label">Objetivos del producto</div><div class="case-box-text">Habilitar el acceso del paciente a su historia clínica · Facilitar el traslado · Reducir el uso de papel · Registrar la evolución en salud · Optimizar el tiempo de consulta · Habilitar diagnósticos integrales</div></div>
+            <div class="case-box"><div class="case-box-label">Usuarios</div><div class="case-box-text">Paciente — acceso y gestión de su historia clínica · Profesional de la salud — acceso con permisos del paciente</div></div>
           </div>
         </div>
       </div>
-
-      <div class="case-section">
-        <div class="case-section-label">Mi rol</div>
-        <ul class="rol-list">
-          <li>UX Research</li>
-          <li>Definición de userflow</li>
-          <li>Wireframes</li>
-          <li>Prototipo interactivo navegable de alta fidelidad en Figma</li>
-        </ul>
-      </div>
-
-
-      <div class="case-section">
-  
-
       <div class="case-section">
         <div class="case-section-label">Vistas del producto</div>
         <div style="display:grid;grid-template-columns:280px 280px;gap:2rem;align-items:stretch;margin-top:1rem;">
@@ -586,7 +538,16 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           </video>
         </div>
       </div>
-      <div class="case-section" style="border-bottom:none;">
+      <div class="case-section">
+        <div class="case-section-label">Mi rol</div>
+        <ul class="rol-list">
+          <li>UX Research</li>
+          <li>Definición de userflow</li>
+          <li>Wireframes</li>
+          <li>Prototipo interactivo navegable de alta fidelidad en Figma</li>
+        </ul>
+      </div>
+      <div class="case-section">
         <a class="case-link-out" href="https://www.behance.net/gallery/213969635/CUEIDO-Aplicacion-Diseno-UXUI-Coderhouse" target="_blank">Ver caso completo en Behance ↗</a>
       </div>
     </div>
@@ -615,17 +576,6 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <p>La familia de productos fue reconocida con el Sello de Diseño Cordobés 2021 por ser un sistema funcional, documentado y optimizado, en consistencia con el entorno y el mercado.</p>
         </div>
       </div>
-
-      <div class="case-section">
-        <div class="case-section-label">Lo que construí</div>
-        <div class="case-cols-3">
-          <div class="case-box"><div class="case-box-label">Diseño de producto</div><div class="case-box-text">Soluciones de packaging funcional diseñadas desde el problema del usuario. Investigación de necesidades y hábitos de consumo para distintos perfiles de clientes.</div></div>
-          <div class="case-box"><div class="case-box-label">Sistema de producción</div><div class="case-box-text">Gestión de red de fabricación: proveedores de materia prima, imprentas, troqueladores y logística de envíos a todo el país.</div></div>
-          <div class="case-box"><div class="case-box-label">Estrategia comercial</div><div class="case-box-text">Coordinación B2B alcanzando 97 clientes en todo el país, con un 15% de fidelización. Comunicación en redes y gestión de venta y postventa.</div></div>
-        </div>
-      </div>
-
-
       <div class="case-section">
         <div class="case-section-label">El producto</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1rem;">
@@ -637,16 +587,21 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
           <img src="imo_botellas2.jpg" alt="Pack botellas abierto" style="width:100%;aspect-ratio:1;object-fit:cover;display:block;border:0.5px solid var(--border);">
         </div>
       </div>
-      <div class="case-section" style="border-bottom:none;">
+      <div class="case-section">
+        <div class="case-section-label">Lo que construí</div>
+        <div class="case-cols-3">
+          <div class="case-box"><div class="case-box-label">Diseño de producto</div><div class="case-box-text">Soluciones de packaging funcional diseñadas desde el problema del usuario. Investigación de necesidades y hábitos de consumo para distintos perfiles de clientes.</div></div>
+          <div class="case-box"><div class="case-box-label">Sistema de producción</div><div class="case-box-text">Gestión de red de fabricación: proveedores de materia prima, imprentas, troqueladores y logística de envíos a todo el país.</div></div>
+          <div class="case-box"><div class="case-box-label">Estrategia comercial</div><div class="case-box-text">Coordinación B2B alcanzando 97 clientes en todo el país, con un 15% de fidelización. Comunicación en redes y gestión de venta y postventa.</div></div>
+        </div>
+      </div>
+      <div class="case-section">
         <div class="case-cols">
-          <div class="case-box-dark">
-            <div class="case-box-label">Por qué esto importa en UX</div>
-            <div class="case-box-text">Escalar un producto físico a 97 clientes en todo el país implica pensar en sistemas, iterar sobre feedback real, gestionar constraints de producción y mantener siempre el impacto en el negocio a la vista. <strong>Es exactamente el mismo proceso que aplico al diseño digital.</strong></div>
-          </div>
+          <div class="case-box-dark"><div class="case-box-label">Por qué esto importa en UX</div><div class="case-box-text">Escalar un producto físico a 97 clientes en todo el país implica pensar en sistemas, iterar sobre feedback real, gestionar constraints de producción y mantener siempre el impacto en el negocio a la vista. <strong>Es exactamente el mismo proceso que aplico al diseño digital.</strong></div></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start;">
-            <div class="case-box" style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1;">97</div><div style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-top:4px;">clientes B2B</div></div>
-            <div class="case-box" style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1;">15%</div><div style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-top:4px;">fidelización</div></div>
-            <div class="case-box" style="grid-column:span 2;text-align:center;"><div style="font-size:11px;color:var(--ink2);">★ Sello de Diseño Cordobés 2021</div></div>
+            <div class="case-box" style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1;">97</div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-top:4px;">clientes B2B</div></div>
+            <div class="case-box" style="text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1;">15%</div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-top:4px;">fidelización</div></div>
+            <div class="case-box" style="grid-column:span 2;text-align:center;"><div style="font-size:13px;color:var(--ink2);">★ Sello de Diseño Cordobés 2021</div></div>
           </div>
         </div>
       </div>
@@ -659,27 +614,21 @@ footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justi
 function showHome(){
   document.getElementById('home-view').style.display='block';
   document.getElementById('case-pages').style.display='none';
-  document.querySelectorAll('.case-page').forEach(p=>{
-    p.classList.remove('active');
-    p.style.display='none';
-  });
+  document.querySelectorAll('.case-page').forEach(p=>p.style.display='none');
   window.scrollTo(0,0);
 }
 function showCase(id){
   document.getElementById('home-view').style.display='none';
   document.getElementById('case-pages').style.display='block';
-  document.querySelectorAll('.case-page').forEach(p=>{
-    p.classList.remove('active');
-    p.style.display='none';
-  });
-  const target = document.getElementById('case-'+id);
-  target.classList.add('active');
-  target.style.display='block';
+  document.querySelectorAll('.case-page').forEach(p=>p.style.display='none');
+  document.getElementById('case-'+id).style.display='block';
   window.scrollTo(0,0);
 }
 function goTo(id){
   setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});},100);
 }
 </script>
-</div></body>
+
+</div><!-- end page-wrap -->
+</body>
 </html>
